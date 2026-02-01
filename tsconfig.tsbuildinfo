@@ -1,1 +1,1 @@
-{"root":["./src/config.ts","./src/index.ts","./src/override.d.ts","./src/utils.ts","./src/models/user.ts","./src/routes/signin.ts","./src/routes/signup.ts"],"version":"5.9.3"}
+{"root":["./src/config.ts","./src/index.ts","./src/override.d.ts","./src/utils.ts","./src/middleware/auth.ts","./src/models/user.ts","./src/models/content.ts","./src/routes/signin.ts","./src/routes/signup.ts","./src/routes/content.ts"],"version":"5.9.3"}

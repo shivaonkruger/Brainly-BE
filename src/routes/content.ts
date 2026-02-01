@@ -11,7 +11,7 @@ router.post("/", authMiddleware, async (req, res) => {
 
     if (!title || !link || !description) {
       return res.status(400).json({
-        message: "Title, link, and description are required"
+        message: "Mandatory fields are missing"
       });
     }
 
@@ -37,3 +37,4 @@ router.post("/", authMiddleware, async (req, res) => {
 });
 
 export default router;
+

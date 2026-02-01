@@ -14,7 +14,7 @@ export const authMiddleware = (
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ message: "Unauthorized" });
-  }
+  } // need to understand what is happening here
 
   const token = authHeader.split(" ")[1];
 
