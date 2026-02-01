@@ -36,5 +36,25 @@ router.post("/", authMiddleware, async (req, res) => {
   }
 });
 
+router.get("/", authMiddleware, async (req, res) => {
+  try {
+    const userId = (req as any).userId;
+
+    // Fetch only this user's content
+    const contents = await Content.find({ userId }).sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      message: "Content fetched successfully",
+      contents
+    });
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Server error"
+    });
+  }
+});
+
 export default router;
 
