@@ -4,7 +4,6 @@ import { authMiddleware } from "../middleware/auth";
 
 const router = express.Router();
 
-// Add content (protected)
 router.post("/", authMiddleware, async (req, res) => {
   try {
     const { title, link, description, sourceType } = req.body;
@@ -46,6 +45,65 @@ router.get("/", authMiddleware, async (req, res) => {
     return res.status(200).json({
       message: "Content fetched successfully",
       contents
+    });
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Server error"
+    });
+  }
+});
+
+router.delete("/:id", authMiddleware, async (req, res) => {
+  try {
+    const contentId = req.params.id;
+    const userId = (req as any).userId;
+
+    const result = await Content.deleteOne({
+      _id: contentId,
+      userId: userId
+    });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({
+        message: "Content not found or you don't have permission to delete it"
+      });
+    }
+
+    return res.status(200).json({
+      message: "Content deleted successfully"
+    });
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Server error"
+    });
+  }
+});
+
+router.put("/:id", authMiddleware, async (req, res) => {
+  try {
+    const contentId = req.params.id;
+    const userId = (req as any).userId;
+    const { title, link, description, sourceType } = req.body;
+
+    const content = await Content.findOneAndUpdate(
+      { _id: contentId, userId },
+      { title, link, description, sourceType },
+      { new: true } 
+    );
+
+    if (!content) {
+      return res.status(404).json({
+        message: "Content not found or you don't have permission to edit it"
+      });
+    }
+
+    return res.status(200).json({
+      message: "Content updated successfully",
+      content
     });
 
   } catch (error) {
