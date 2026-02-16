@@ -3,9 +3,9 @@ import User from "../models/User";
 
 const router = express.Router();
 
-router.post("/signup", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const { username,email_id , password } = req.body;
+    const { username, email_id, password } = req.body;
 
     if (!username || !password) {
       return res.status(400).json({

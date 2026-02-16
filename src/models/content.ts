@@ -6,7 +6,6 @@ export interface IContent extends Document {
   link: string;
   description: string;
   sourceType: "twitter" | "youtube" | "reddit" | "other";
-  createdAt: Date;
 }
 
 const ContentSchema = new Schema<IContent>(
@@ -32,12 +31,6 @@ const ContentSchema = new Schema<IContent>(
       type: String,
       required: true
     },
-
-    sourceType: {
-      type: String,
-      enum: ["twitter", "youtube", "reddit", "other"],
-      default: "other"
-    }
   },
   {
     timestamps: true // adds createdAt & updatedAt automatically
