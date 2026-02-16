@@ -1,17 +1,17 @@
-import mongoose, {Schema} from 'mongoose';
-mongoose.connect('mongodb+srv://shiva:shivagupta@cluster0.drkxqxr.mongodb.net/brainly');
+import mongoose, { Schema } from 'mongoose';
+
 
 
 const UserSchema: Schema = new Schema({
-  username: { 
+  username: {
     type: String
   },
-  email_id: { 
-    type: String, 
+  email_id: {
+    type: String,
     unique: true,
   },
-  password: { 
-    type: String, 
+  password: {
+    type: String,
   }
 });
 
