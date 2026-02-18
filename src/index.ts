@@ -19,6 +19,8 @@ app.use(express.json());
 app.use("/api/signup", signupRoutes);
 app.use("/api/signin", signinRoutes);
 app.use("/api/mybrain", contentRoutes);
+import roadmapRoutes from "./routes/roadmap";
+app.use("/api/roadmap", roadmapRoutes);
 
 // Connect to MongoDB and start server
 async function startServer() {
