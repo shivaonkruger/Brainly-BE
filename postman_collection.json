@@ -206,6 +206,294 @@
                     "response": []
                 }
             ]
+        },
+        {
+            "name": "Roadmap",
+            "item": [
+                {
+                    "name": "Create Roadmap",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"goal\": \"Learn React\",\n    \"category\": \"Frontend\",\n    \"currentLevel\": \"Beginner\",\n    \"timeAvailability\": \"10 hours/week\",\n    \"deadline\": \"3 months\",\n    \"learningStyle\": \"Interactive\",\n    \"budget\": \"Free\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/roadmap",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "roadmap"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All Roadmaps",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/roadmap",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "roadmap"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Roadmap by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/roadmap/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "roadmap",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "ENTER_ROADMAP_ID_HERE"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Roadmap",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"goal\": \"Learn React and Next.js\",\n    \"phases\": [\n        {\n            \"title\": \"Phase 1: Basics\",\n            \"tasks\": [\n                {\n                    \"title\": \"Learn JSX\",\n                    \"description\": \"Understand JSX syntax\",\n                    \"resources\": [\n                        \"url1\"\n                    ],\n                    \"status\": \"pending\"\n                }\n            ]\n        }\n    ]\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/roadmap/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "roadmap",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "ENTER_ROADMAP_ID_HERE"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Roadmap",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/roadmap/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "roadmap",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "ENTER_ROADMAP_ID_HERE"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Todo",
+            "item": [
+                {
+                    "name": "Create Todo",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"Grocery Shopping\",\n    \"tasks\": [\n        {\n            \"description\": \"Buy Milk\",\n            \"completed\": false\n        },\n        {\n            \"description\": \"Buy Eggs\",\n            \"completed\": false\n        },\n        {\n            \"description\": \"Buy Bread\",\n            \"completed\": true\n        }\n    ]\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/todo",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "todo"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All Todos",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/todo",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "todo"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Todo",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"Grocery Shopping Weekend\",\n    \"tasks\": [\n        {\n            \"description\": \"Buy Milk\",\n            \"completed\": true\n        },\n        {\n            \"description\": \"Buy Eggs\",\n            \"completed\": true\n        },\n        {\n            \"description\": \"Buy Bread\",\n            \"completed\": true\n        },\n        {\n            \"description\": \"Buy Cheese\",\n            \"completed\": false\n        }\n    ]\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/todo/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "todo",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "ENTER_TODO_ID_HERE"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Todo",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/todo/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "todo",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "ENTER_TODO_ID_HERE"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
         }
     ],
     "variable": [

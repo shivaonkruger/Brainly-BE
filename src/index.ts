@@ -22,6 +22,9 @@ app.use("/api/mybrain", contentRoutes);
 import roadmapRoutes from "./routes/roadmap";
 app.use("/api/roadmap", roadmapRoutes);
 
+import todoRoutes from "./routes/todo";
+app.use("/api/todo", todoRoutes);
+
 // Connect to MongoDB and start server
 async function startServer() {
   try {

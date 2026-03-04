@@ -16,7 +16,7 @@ router.post("/", authMiddleware, async (req, res) => {
             return res.status(400).json({ message: "Goal is required" });
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
 
         const prompt = `
       Generate a structured learning roadmap for a user.
