@@ -223,7 +223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"goal\": \"Learn React\",\n    \"category\": \"Frontend\",\n    \"currentLevel\": \"Beginner\",\n    \"timeAvailability\": \"10 hours/week\",\n    \"deadline\": \"3 months\",\n    \"learningStyle\": \"Interactive\",\n    \"budget\": \"Free\"\n}",
+                            "raw": "{\n    \"goal\": \"Learn React\",\n    \"category\": \"Frontend\",\n    \"currentLevel\": \"Beginner\",\n    \"timeAvailability\": \"14 hours/week\",\n    \"deadline\": \"3 months\",\n    \"learningStyle\": \"Interactive\",\n    \"budget\": \"Free\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -396,6 +396,30 @@
                             ],
                             "path": [
                                 "todo"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Smart Todo",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/todo/smarttodo",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "todo",
+                                "smarttodo"
                             ]
                         }
                     },
