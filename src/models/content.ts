@@ -31,6 +31,11 @@ const ContentSchema = new Schema<IContent>(
       type: String,
       required: true
     },
+    sourceType: {
+      type: String,
+      enum: ["twitter", "youtube", "reddit", "other"],
+      required: true
+    },
   },
   {
     timestamps: true // adds createdAt & updatedAt automatically

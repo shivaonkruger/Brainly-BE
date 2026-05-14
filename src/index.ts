@@ -9,6 +9,8 @@ dotenv.config();
 import signupRoutes from "./routes/Signup";
 import signinRoutes from "./routes/Signin";
 import contentRoutes from "./routes/content";
+import roadmapRoutes from "./routes/roadmap";
+import todoRoutes from "./routes/todo";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,10 +21,7 @@ app.use(express.json());
 app.use("/api/signup", signupRoutes);
 app.use("/api/signin", signinRoutes);
 app.use("/api/mybrain", contentRoutes);
-import roadmapRoutes from "./routes/roadmap";
 app.use("/api/roadmap", roadmapRoutes);
-
-import todoRoutes from "./routes/todo";
 app.use("/api/todo", todoRoutes);
 
 // Connect to MongoDB and start server
